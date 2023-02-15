@@ -18,29 +18,28 @@ public class Solution {
 				arr[j] = Integer.parseInt(st.nextToken());
 			}
 			for (int j = 0; j < N; j++) {
-				for (int k = 0; k < N; k++) {
-					if (j != k) {
-						String num = Integer.toString(arr[j]*arr[k]);
-						int[] arr2 = new int[num.length()];
-						for (int l = 0; l < num.length(); l++) {
-							arr2[l] = num.charAt(l)-'0';
-						}
-						int tf = 0;
-						for (int l = 0; l < num.length() - 1; l++) {
-							if (arr2[l] > arr2[l + 1]) {
-								tf = 1;
-								break;
-							}
-						}
-						if (tf == 0) {
-							if (max < Integer.parseInt(num)) {
-								max = Integer.parseInt(num);
-							}
+				for (int k = j + 1; k < N; k++) {
+					String num = Integer.toString(arr[j] * arr[k]);
+					int[] arr2 = new int[num.length()];
+					for (int l = 0; l < num.length(); l++) {
+						arr2[l] = num.charAt(l) - '0';
+					}
+					int tf = 0;
+					for (int l = 0; l < num.length() - 1; l++) {
+						if (arr2[l] > arr2[l + 1]) {
+							tf = 1;
+							break;
 						}
 					}
+					if (tf == 0) {
+						if (max < Integer.parseInt(num)) {
+							max = Integer.parseInt(num);
+						}
+					}
+
 				}
 			}
-			if(max < 0) {
+			if (max < 0) {
 				max = -1;
 			}
 			System.out.println("#" + i + " " + max);
