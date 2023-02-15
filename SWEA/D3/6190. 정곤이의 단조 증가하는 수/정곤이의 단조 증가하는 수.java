@@ -21,12 +21,11 @@ public class Solution {
 				for (int k = j + 1; k < N; k++) {
 					String num = Integer.toString(arr[j] * arr[k]);
 					int[] arr2 = new int[num.length()];
-					for (int l = 0; l < num.length(); l++) {
-						arr2[l] = num.charAt(l) - '0';
-					}
+					arr2[0] = num.charAt(0)-'0';
 					int tf = 0;
-					for (int l = 0; l < num.length() - 1; l++) {
-						if (arr2[l] > arr2[l + 1]) {
+					for (int l = 1; l < num.length(); l++) {
+						arr2[l] = num.charAt(l) - '0';
+						if (arr2[l-1] > arr2[l]) {
 							tf = 1;
 							break;
 						}
