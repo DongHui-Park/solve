@@ -48,6 +48,6 @@ public class Main {
         bw.newLine();
     }
     bw.write(x + " " + y);
-    bw.flush();
+    bw.close();
 }
 }
