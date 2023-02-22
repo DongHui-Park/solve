@@ -24,18 +24,17 @@ public class Solution {
 				}
 			}
 			int min = Integer.MAX_VALUE;
-			int j = 0;
-			for (int k = j + 1; k < N - 1; k++) {
-				for (int l = k + 1; l < N; l++) {
+			for (int j = 0; j < N - 2; j++) {
+				for (int k = j+1; k < N-1; k++) {
 					int cnt = 0;
 					for (int m = 0; m < N; m++) {
-						if (m < k) {
+						if (m <= j) {
 							for (int n = 0; n < M; n++) {
 								if (!arr[m][n].equals("W")) {
 									cnt++;
 								}
 							}
-						} else if (m < l) {
+						} else if (m <= k) {
 							for (int n = 0; n < M; n++) {
 								if (!arr[m][n].equals("B")) {
 									cnt++;
