@@ -46,9 +46,7 @@ public class Solution {
 					} else if (arr[mp[0] + dr[i]][mp[1] + dc[i]] == 3) {
 						tf = 1;
 						break;
-					} else {
-						arr[mp[0] + dr[i]][mp[1] + dc[i]] = 1;
-					}
+					} 
 				}
 			}
 		}
